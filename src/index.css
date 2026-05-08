@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: #020617;
+    color: white;
+}
+
+/* Animated background */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background:
+            radial-gradient(circle at top left, #00ffff22, transparent 30%),
+            radial-gradient(circle at bottom right, #ff00ff22, transparent 30%),
+            radial-gradient(circle at center, #00ff8822, transparent 25%);
+    animation: moveBg 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-10%, -10%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* glowing scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: cyan;
+    border-radius: 10px;
+}
